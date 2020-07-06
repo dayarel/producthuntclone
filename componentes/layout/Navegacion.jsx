@@ -7,10 +7,10 @@ const Navegacion = () => {
       <Link href="/">
         <a>Inicio</a>
       </Link>
-      <Link href="/">
+      <Link href="/populares">
         <a>Populares</a>
       </Link>
-      <Link href="/">
+      <Link href="/nuevo-producto">
         <a>Nuevo Producto</a>
       </Link>
     </Nav>
