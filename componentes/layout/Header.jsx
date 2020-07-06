@@ -16,7 +16,12 @@ const Header = () => {
       `}
     >
       <ContenedorHeader>
-        <div>
+        <div
+          css={css`
+            display: flex;
+            align-items: center;
+          `}
+        >
           <Link href="/">
             <a>
               <Logo>P</Logo>
