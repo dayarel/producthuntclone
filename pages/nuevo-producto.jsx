@@ -14,12 +14,12 @@ import firebase from "../firebase";
 // Importar validaciones
 
 import useValidacion from "../hooks/useValidacion";
-import validarCrearCuenta from "../validacion/validarCrearCuenta";
+import validarCrearProducto from "../validacion/validarCrearProducto";
 
 const STATE_INICIAL = {
   nombre: "",
   empresa: "",
-  imagen: "",
+  // imagen: "",
   url: "",
   descripcion: "",
 };
@@ -33,7 +33,7 @@ const NuevoProducto = () => {
     handleSubmit,
     handleChange,
     handleBlur,
-  } = useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta);
+  } = useValidacion(STATE_INICIAL, validarCrearProducto, crearCuenta);
 
   const { nombre, empresa, imagen, url, descripcion } = valores;
 
@@ -65,6 +65,7 @@ const NuevoProducto = () => {
                 onBlur={handleBlur}
               />
             </Campo>
+            {errores.nombre && <Error>{errores.nombre}</Error>}
             <Campo>
               <label htmlFor="empresa">Empresa</label>
               <input
@@ -72,13 +73,13 @@ const NuevoProducto = () => {
                 id="empresa"
                 placeholder="Nombre Empresa o Compañía"
                 name="empresa"
-                value={nombre}
+                value={empresa}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
             </Campo>
             {errores.empresa && <Error>{errores.empresa}</Error>}
-            <Campo>
+            {/* <Campo>
               <label htmlFor="imagen">Imagen</label>
               <input
                 type="file"
@@ -89,12 +90,13 @@ const NuevoProducto = () => {
                 onBlur={handleBlur}
               />
             </Campo>
-            {errores.imagen && <Error>{errores.imagen}</Error>}
+            {errores.imagen && <Error>{errores.imagen}</Error>} */}
             <Campo>
               <label htmlFor="url">URL</label>
               <input
                 type="url"
                 id="url"
+                placeholder="URL de tu producto"
                 name="url"
                 value={url}
                 onChange={handleChange}
